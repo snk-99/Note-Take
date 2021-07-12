@@ -29,9 +29,9 @@
   No tests
 
   ## links:
-  [Repository] (https://github.com/snk-99/Note-Take)
+  [Repository](https://github.com/snk-99/Note-Take)
 
-  [Deployed-link] (https://entrys.herokuapp.com/)
+  [Deployed-link](https://entrys.herokuapp.com/)
 
   ## Questions:
   Contact me for any questions!!
