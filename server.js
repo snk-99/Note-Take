@@ -1,21 +1,24 @@
-// Require Dependencies
-const express = require("express");
-const fs = require("fs");
-const path = require('path');
+// DEPENDENCIES
+const express = require('express');
 
-// Initialize express app
+// EXPRESS CONFIGURATION
 const app = express();
-const PORT = process.env.PORT || 8000;
 
-// Setup data parsing
-app.use(express.urlencoded({ extended: true }));
+// PORT - set initial port to use in listener
+const PORT = process.env.PORT || 8080;
+
+// DATA PARSING - setting up express app to handle data parsing
+app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-app.use(express.static(__dirname));
 
-//Require routes file
-require('./routes/routes')(app);
+// Built-in middleware function to serve static files such as images, CSS files, and JavaScript files
+app.use(express.static('public'));
 
-// Setup listener
-app.listen(PORT, function() {
-    console.log("App listening on PORT: " + PORT);
-}); 
+// ROUTER - our "route" files
+require('./routes/apiRoutes')(app);
+require('./routes/htmlRoutes')(app);
+
+// LISTENER - starting server
+app.listen(PORT, () => {
+    console.log(`App listening on PORT: ${PORT}`)
+});
