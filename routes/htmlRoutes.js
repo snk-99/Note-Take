@@ -4,12 +4,12 @@ const path = require('path');
 // ROUTING
 module.exports = (app) => {
 
-    // route to display the notes page
+    // notes page
     app.get('/notes', (req, res) => {
         res.sendFile(path.join(__dirname, '../public/notes.html'));
     });    
     
-    // default route to home
+    //  home page
     app.get('*', (req, res) => {
         res.sendFile(path.join(__dirname, '../public/index.html'));
     });

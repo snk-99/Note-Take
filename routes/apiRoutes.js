@@ -31,7 +31,7 @@ module.exports = function(app) {
 
     });
 
-   
+   // allows users to delete notes
     app.delete("/api/notes/:id", function(req, res) {
       fs.readFile("db/db.json", "utf8", function(error, data) {
         let noteId = req.params.id;
